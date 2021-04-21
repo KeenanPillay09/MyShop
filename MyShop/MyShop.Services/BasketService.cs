@@ -1,4 +1,5 @@
-﻿using MyShop.Core.Contracts;
+﻿
+using MyShop.Core.Contracts;
 using MyShop.Core.Models;
 using MyShop.Core.ViewModels;
 using System;
@@ -32,7 +33,6 @@ namespace MyShop.Services
             if (cookie != null)
             {
                 string basketId = cookie.Value;
-
                 if (!string.IsNullOrEmpty(basketId))
                 {
                     basket = basketContext.Find(basketId);
@@ -54,6 +54,7 @@ namespace MyShop.Services
             }
 
             return basket;
+
         }
 
         private Basket CreateNewBasket(HttpContextBase httpContext)
@@ -154,6 +155,13 @@ namespace MyShop.Services
             {
                 return model;
             }
+        }
+
+        public void ClearBasket(HttpContextBase httpContext)
+        {
+            Basket basket = GetBasket(httpContext, false);
+            basket.BasketItems.Clear();
+            basketContext.Commit();
         }
     }
 }
