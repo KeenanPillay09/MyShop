@@ -27,7 +27,7 @@ namespace MyShop.WebUI.Controllers
 
             if (Category==null)
             {
-               products = context.Collection().ToList();
+                products = context.Collection().ToList();
             }
             else
             {
@@ -37,6 +37,7 @@ namespace MyShop.WebUI.Controllers
             ProductListViewModel model = new ProductListViewModel();
             model.Products = products;
             model.ProductCategories = categories;
+
 
             return View(model);
         }
