@@ -25,8 +25,9 @@ namespace MyShop.WebUI.Controllers
             List<Product> products;
             List<ProductCategory> categories = productCategories.Collection().ToList();
 
+
             if (Category==null)
-            {
+            { 
                 products = context.Collection().ToList();
             }
             else
@@ -34,10 +35,11 @@ namespace MyShop.WebUI.Controllers
                 products = context.Collection().Where(p => p.Category == Category).ToList();
             }
 
+           
+
             ProductListViewModel model = new ProductListViewModel();
             model.Products = products;
             model.ProductCategories = categories;
-
 
             return View(model);
         }

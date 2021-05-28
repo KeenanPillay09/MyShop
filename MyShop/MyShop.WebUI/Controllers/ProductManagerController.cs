@@ -8,6 +8,7 @@ using MyShop.DataAccess.InMemory;
 using MyShop.Core.ViewModels;
 using MyShop.Core.Contracts;
 using System.IO;
+using PagedList;
 
 namespace MyShop.WebUI.Controllers
 {
@@ -23,7 +24,7 @@ namespace MyShop.WebUI.Controllers
             productCategories = productCategoriesContext;
         }
         // GET: ProductManager
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
             List<Product> products = context.Collection().ToList();
             return View(products);

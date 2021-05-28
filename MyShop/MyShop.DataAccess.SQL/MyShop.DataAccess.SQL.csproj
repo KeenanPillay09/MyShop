@@ -60,6 +60,26 @@
     <Compile Include="Migrations\202104211138290_AddedOrders.designer.cs">
       <DependentUpon>202104211138290_AddedOrders.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105151147333_EditProductModel.cs" />
+    <Compile Include="Migrations\202105151147333_EditProductModel.designer.cs">
+      <DependentUpon>202105151147333_EditProductModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105251504033_AddDeliveryTypeToOrder.cs" />
+    <Compile Include="Migrations\202105251504033_AddDeliveryTypeToOrder.designer.cs">
+      <DependentUpon>202105251504033_AddDeliveryTypeToOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105261042249_AddedDeliveryMethodToOrder.cs" />
+    <Compile Include="Migrations\202105261042249_AddedDeliveryMethodToOrder.designer.cs">
+      <DependentUpon>202105261042249_AddedDeliveryMethodToOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105261501351_AddedBasketTotalToOrders.cs" />
+    <Compile Include="Migrations\202105261501351_AddedBasketTotalToOrders.designer.cs">
+      <DependentUpon>202105261501351_AddedBasketTotalToOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105261521521_AddedFinalTotalToOrders.cs" />
+    <Compile Include="Migrations\202105261521521_AddedFinalTotalToOrders.designer.cs">
+      <DependentUpon>202105261521521_AddedFinalTotalToOrders.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQLRepository.cs" />
@@ -80,6 +100,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104211138290_AddedOrders.resx">
       <DependentUpon>202104211138290_AddedOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105151147333_EditProductModel.resx">
+      <DependentUpon>202105151147333_EditProductModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105251504033_AddDeliveryTypeToOrder.resx">
+      <DependentUpon>202105251504033_AddDeliveryTypeToOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105261042249_AddedDeliveryMethodToOrder.resx">
+      <DependentUpon>202105261042249_AddedDeliveryMethodToOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105261501351_AddedBasketTotalToOrders.resx">
+      <DependentUpon>202105261501351_AddedBasketTotalToOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105261521521_AddedFinalTotalToOrders.resx">
+      <DependentUpon>202105261521521_AddedFinalTotalToOrders.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

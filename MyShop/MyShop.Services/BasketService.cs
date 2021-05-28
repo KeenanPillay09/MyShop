@@ -26,31 +26,37 @@ namespace MyShop.Services
 
         private Basket GetBasket(HttpContextBase httpContext, bool createIfNull)
         {
-            HttpCookie cookie = httpContext.Request.Cookies.Get(BasketSessionName);
+            HttpCookie cookie = httpContext.Request.Cookies.Get(BasketSessionName); //Attempt to read cookie
 
-            Basket basket = new Basket();
+            Basket basket = new Basket(); //Create new Basket
 
-            if (cookie != null)
+            if (cookie != null) //Check if Cookie exists
             {
-                string basketId = cookie.Value;
-                if (!string.IsNullOrEmpty(basketId))
+                string basketId = cookie.Value; //Name basketId with Cookie Value
+                if (!string.IsNullOrEmpty(basketId)) //Another check to see if basketId has a value
                 {
-                    basket = basketContext.Find(basketId);
+                    basket = basketContext.Find(basketId); //Loads basket from basketContext and finds Id
                 }
                 else
                 {
-                    if (createIfNull)
+                    if (createIfNull) //Check if cookie/basket is null
                     {
-                        basket = CreateNewBasket(httpContext);
+                        basket = CreateNewBasket(httpContext); //Create basket
                     }
                 }
             }
             else
             {
+                createIfNull = true; //Added this code to change the variable createIfNull to true so it created a new basket
                 if (createIfNull)
                 {
                     basket = CreateNewBasket(httpContext);
                 }
+            }
+
+            if (basket==null)
+            {
+                basket = CreateNewBasket(httpContext);
             }
 
             return basket;
@@ -155,6 +161,23 @@ namespace MyShop.Services
             {
                 return model;
             }
+        }
+
+        public decimal BasketTotal(HttpContextBase httpContext)
+        {
+            Basket basket = GetBasket(httpContext, false);
+            decimal bTotal=0;
+
+            if (basket != null)
+            {
+                decimal? basketTotal = (from item in basket.BasketItems
+                                        join p in productContext.Collection() on item.ProductId equals p.Id
+                                        select item.Quantity * p.Price).Sum();
+
+                bTotal = basketTotal ?? decimal.Zero;
+            }
+
+            return bTotal;
         }
 
         public void ClearBasket(HttpContextBase httpContext)
