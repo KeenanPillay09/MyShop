@@ -64,6 +64,11 @@ namespace MyShop.WebUI.Controllers
             return View();
         }
 
+        public ActionResult Map()
+        {
+            return View();
+        }
+
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";

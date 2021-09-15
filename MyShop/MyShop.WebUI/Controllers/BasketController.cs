@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 
 namespace MyShop.WebUI.Controllers
@@ -31,7 +32,7 @@ namespace MyShop.WebUI.Controllers
         {
             basketService.AddToBasket(this.HttpContext, Id);
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Index","Home");
         }
 
         public ActionResult RemoveFromBasket(string Id)
@@ -171,6 +172,25 @@ namespace MyShop.WebUI.Controllers
         public ActionResult ThankYou(string OrderId)
         {
             ViewBag.OrderId = OrderId;
+
+            //*Database Name* db = new *Database Name*();
+            // PharmacyDatabaseEntities db = new PharmacyDatabaseEntities();
+
+            //string email = Session["UserEmail"].ToString();
+            //string subject = "<do-not-reply> Order Confirmation @ e-Library";
+            //string body = "Good day! Hope you are keeping well. This is confirmation that we have received your order and are processing it. See you soon!";
+
+            ////Copy this as is!!!!!!!
+            //WebMail.SmtpServer = "smtp.gmail.com";
+            //WebMail.SmtpPort = 587;
+            //WebMail.SmtpUseDefaultCredentials = true;
+            //WebMail.EnableSsl = true;
+            //WebMail.UserName = "ballantines.pharmacy@gmail.com"; //email Address
+            //WebMail.Password = "Ballantines2020"; //Password case sensitive
+
+            //WebMail.Send(email, subject, body);
+            //ViewBag.msg = "Email sent!";
+
             return View();
         }
 
