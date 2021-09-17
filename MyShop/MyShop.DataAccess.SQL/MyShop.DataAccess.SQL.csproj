@@ -80,6 +80,30 @@
     <Compile Include="Migrations\202105261521521_AddedFinalTotalToOrders.designer.cs">
       <DependentUpon>202105261521521_AddedFinalTotalToOrders.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202109161518526_AddedDriverModel.cs" />
+    <Compile Include="Migrations\202109161518526_AddedDriverModel.designer.cs">
+      <DependentUpon>202109161518526_AddedDriverModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109161520394_AddDriverToOrder.cs" />
+    <Compile Include="Migrations\202109161520394_AddDriverToOrder.designer.cs">
+      <DependentUpon>202109161520394_AddDriverToOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109161531431_AddBaseEntityToDriver.cs" />
+    <Compile Include="Migrations\202109161531431_AddBaseEntityToDriver.designer.cs">
+      <DependentUpon>202109161531431_AddBaseEntityToDriver.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109161557330_UpdateContextWithDriver.cs" />
+    <Compile Include="Migrations\202109161557330_UpdateContextWithDriver.designer.cs">
+      <DependentUpon>202109161557330_UpdateContextWithDriver.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109171542080_AddDriverIE.cs" />
+    <Compile Include="Migrations\202109171542080_AddDriverIE.designer.cs">
+      <DependentUpon>202109171542080_AddDriverIE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109171558087_DriverName.cs" />
+    <Compile Include="Migrations\202109171558087_DriverName.designer.cs">
+      <DependentUpon>202109171558087_DriverName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQLRepository.cs" />
@@ -115,6 +139,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105261521521_AddedFinalTotalToOrders.resx">
       <DependentUpon>202105261521521_AddedFinalTotalToOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109161518526_AddedDriverModel.resx">
+      <DependentUpon>202109161518526_AddedDriverModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109161520394_AddDriverToOrder.resx">
+      <DependentUpon>202109161520394_AddDriverToOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109161531431_AddBaseEntityToDriver.resx">
+      <DependentUpon>202109161531431_AddBaseEntityToDriver.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109161557330_UpdateContextWithDriver.resx">
+      <DependentUpon>202109161557330_UpdateContextWithDriver.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109171542080_AddDriverIE.resx">
+      <DependentUpon>202109171542080_AddDriverIE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109171558087_DriverName.resx">
+      <DependentUpon>202109171558087_DriverName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

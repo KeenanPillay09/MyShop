@@ -24,7 +24,9 @@ namespace MyShop.Core.Models
         public string DeliveryMethod { get; set; }
         public decimal BasketTotal { get; set; }
         public decimal FinalTotal { get; set; }
+        public string Driver { get; set; }
         public virtual ICollection<OrderItem> OrderItems { get; set; }
+        public IEnumerable<Driver> Drivers { get; set; } //Added
 
         public enum DeliveryType
         {

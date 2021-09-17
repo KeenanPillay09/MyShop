@@ -196,6 +196,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BasketController.cs" />
+    <Compile Include="Controllers\DriverManagerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\OrderManagerController.cs" />
@@ -292,10 +293,15 @@
     <Content Include="Views\Basket\Collect.cshtml" />
     <Content Include="Views\Basket\TabCheckout.cshtml" />
     <Content Include="Views\Home\Map.cshtml" />
+    <Content Include="Views\DriverManager\Index.cshtml" />
+    <Content Include="Views\DriverManager\Create.cshtml" />
+    <Content Include="Views\DriverManager\Edit.cshtml" />
+    <Content Include="Views\DriverManager\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\ProductImages\" />
+    <Folder Include="Views\Driver\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

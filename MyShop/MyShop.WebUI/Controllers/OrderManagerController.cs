@@ -1,6 +1,7 @@
 ﻿
 using MyShop.Core.Contracts;
 using MyShop.Core.Models;
+using MyShop.Core.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,9 +15,14 @@ namespace MyShop.WebUI.Controllers
     {
         IOrderService orderService;
 
-        public OrderManagerController(IOrderService OrderService)
+        IRepository<Driver> drivers;
+        
+        
+
+        public OrderManagerController(IOrderService OrderService, IRepository<Driver> driversContext)
         {
             this.orderService = OrderService;
+            drivers = driversContext;
         }
         // GET: OrderManager
         public ActionResult Index()
@@ -34,7 +40,17 @@ namespace MyShop.WebUI.Controllers
                 "Order Shipped",
                 "Order Complete"
             };
+
+            //ViewBag.Driver = new List<string>() {
+            //    "Driver A",
+            //    "Driver B",
+            //    "Driver C",
+            //    "Driver D"
+            //};
+           
             Order order = orderService.GetOrder(Id);
+            order.Drivers = drivers.Collection();
+           // order.Driver = 
             return View(order);
         }
 
@@ -44,6 +60,7 @@ namespace MyShop.WebUI.Controllers
             Order order = orderService.GetOrder(Id);
 
             order.OrderStatus = updatedOrder.OrderStatus;
+            order.Driver = updatedOrder.Driver;
             orderService.UpdateOrder(order);
 
             return RedirectToAction("Index");
